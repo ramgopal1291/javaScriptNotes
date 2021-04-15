@@ -1,0 +1,111 @@
+Generators (or generator functions) :- ES6 introduced a new way of working with functions and iterators in the form of Generators.
+
+	A generator is a function that can stop midway and then continue from where it stopped.
+	A generator is a function that produces a sequence of results instead of a single value, i.e you generate ​a series of values.
+	When called, generator functions do not initially execute their code. Instead, they return a special type of iterator, called a Generator. When a value is consumed by calling the generator's next method, the Generator function executes until it encounters the yield keyword.
+
+“use strict”
+The directive looks like a string: "use strict" or 'use strict'. When it is located at the top of a script, the whole script works the “modern” way.
+
+Objects :- 
+
+	var person = {
+		firstName: "John",
+		lastName : "Doe",
+		id       : 5566,
+		fullName : function() {
+			return this.firstName + " " + this.lastName;
+		}
+	};
+	name = person.fullName();
+	name = person.fullName;
+	console.log(name);
+	------------------------------------------------
+	
+	class Animal {
+	  constructor(name) {
+		this.name = name;
+	  }
+
+	  speak() {
+		console.log(`${this.name} makes a noise.`);
+	  }
+	}
+
+	class Dog extends Animal {
+	  constructor(name) {
+		super(name); // call the super class constructor and pass in the name parameter
+	  }
+
+	  speak() {
+		console.log(`${this.name} barks.`);
+	  }
+	}
+
+	let d = new Dog('Mitzie');
+	d.speak(); // Mitzie barks.
+	
+	--------------------------------------------------
+		
+Callback :- A callback is a function passed into another function as an argument to be executed later.
+		Callback functions can be synchronous or asynchronous.
+
+-------------------------------------------------------
+
+Shallow copy Vs Deep copy
+
+Shallow copy :  Coping on top level elements
+Deep Copy :  Copying nested elements
+
+var array = ['ram', 'shyam', 'krishna'];
+var arrayNew = array;
+	arrayNew[0] = '100';
+
+console.log(arrayNew, array);
+
+
+var car = {
+	size = '100%',
+	owner = 'ram',
+	isACorNonAC = true
+}
+
+var otherCar = car;
+
+otherCar.model = '0%';
+car.isACorNonAC = false;
+
+console.log(otherCar, car);
+
+
+//Array Shallow Copy
+
+1. Array.concate(array1);
+
+var originalArray = ['100', '200', '300', {'a', 'hello'}]
+
+2. Array.from(array1);
+
+3. Array.slice(0);
+
+4. Spread Operator [...];
+
+
+//Array Deep Copy
+
+1. JSON.parse(JSON.stringify(array1));
+
+
+
+-------------------------------------------
+
+//Object Shallow Copy
+
+1. Object.assign({}, sourceObj);
+
+2. Spread Operator = {...Obj};
+
+//Object Deep Copy
+
+1. JSON.parse(JSON.stringify(Obj));
+
