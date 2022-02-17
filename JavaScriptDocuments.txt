@@ -7,7 +7,7 @@ Generators (or generator functions) :- ES6 introduced a new way of working with 
 “use strict”
 The directive looks like a string: "use strict" or 'use strict'. When it is located at the top of a script, the whole script works the “modern” way.
 
-Objects :- 
+Objects :- In JavaScript, an object is a standalone entity, with properties and type. Compare it with a car, for example. A car is an object, with properties. A car has a color, a design, weight, a material it is made of.
 
 	var person = {
 		firstName: "John",
