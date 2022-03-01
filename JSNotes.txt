@@ -128,7 +128,7 @@ ES9:
 	Datatypes
 	Variable Scopes(let, var, const)
 	setTimeout(), setInterval(),
-	callBack, Promise,
+	callBack, Promise(Life cycle of Promise),
 	async,await
 	unshift vs push
 	Shallow copy Vs Deep copy
