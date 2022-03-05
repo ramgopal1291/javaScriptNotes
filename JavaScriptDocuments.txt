@@ -96,7 +96,6 @@ var originalArray = ['100', '200', '300', {'a', 'hello'}]
 1. JSON.parse(JSON.stringify(array1));
 
 
-
 -------------------------------------------
 
 //Object Shallow Copy
@@ -145,21 +144,14 @@ Q6. What are the advantages of JavaScript?
 Q7. How can you create an object in JavaScript?
 	JavaScript supports Object concept very well. You can create an object using the object literal as follows −
 
-	1
-	2
-	3
-	4
 	var emp = {
-	name: "Daniel",
-	age: 23
+		name: "Daniel",
+		age: 23
 	};
 
 Q8. How can you create an Array in JavaScript?
 	You can define arrays using the array literal as follows-
 
-
-	1
-	2
 	var x = [];
 	var y = [1, 2, 3, 4, 5];
 
