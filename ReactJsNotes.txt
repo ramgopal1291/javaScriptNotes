@@ -1,0 +1,76 @@
+Major Points as discussed:
+ https://github.com/sudheerj/reactjs-interview-questions
+
+
+javascript
+
+prototype , ES6 -class
+closure, curry function
+ES6 array iterate - es6 - map, filter
+generator - redux saga
+api calling, axios, fetch
+local storage v/s session storage
+polyfills - good to know
+
+
+React
+functional, class component, props, state, presentational/dumb
+props -> child, prop drilling - context api, state management - redux, mobx, HOCs, Pure Componet
+
+redux functionality-, middleware - thunk, saga
+hooks - useState, redux - useDispatch(),
+
+useMemo();
+debounce, throttle
+Reconcilation,
+React diffing algorithm - React Fibre
+
+useState(),
+this.setState(() => {
+})
+
+
+Redux - components, reselect, redux-persist
+html - 5 -features
+Css- Box model, flex model, grid model,
+postion: auto| relative| absolute| fixed| static - difference- flow of document
+
+------------------------------
+
+Please find below set of questions with sample answers that were being asked by client today. Please go through these and look for more details as well. Mostly questions are present in the link that I had shared - https://github.com/sudheerj/reactjs-interview-questions
+So I am again repeating, please go through all the questions present in this link.
+
+
+1. How to prevent re-rendering in both functional and class component
+Functional Component - use React.memo.
+Class Component - use React.PureComponent. For regular Class components, you can make use of shouldComponentUpdate() lifecycle hook
+
+2. How to deploy react application in another machine.
+For deployment, we have to create a react build. If using CRA, we can directly run 'npm run build' else we have to configure webpack manually for creating the build. The generated build can be deployed to any web server
+
+3. What is the workflow of react and how it render component, like if hello world is rendered then how it is actually working -
+Please go through this - https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/
+
+4. How can you manage states in overall application -  A state management library like Redux can be used. Alternative like Mobx can also be used but you can tell them that you have only worked with redux if you have not used mobx and can work on that if required.
+
+5. Apart from redux , is there any alternative - Mobx, Context API with react hooks, Relay+graphql
+
+6. In which case, you will use functional component and in which case, you will use class component-
+Earlier when React hooks were not present, Functional components were used for stateless components. Class components were used where the component had to maintain their own local state. But with the React hooks, local state can also be maintained inside functional components as well.
+
+7. Diff between functional and class component - See point #6. other small things are: class components have a render() member whereas FCs directly return the JSX. No lifecycle methods in FCs but things can be achieved using useEffect() hook.
+
+8. What is npm start command and how it work? 
+When you issue the command npm start from the root directory of your project, node will look for a ‘scripts’ object in your package.json file. If found, it will look for a script with the key ‘start’ and run the command specified as its value.
+If your package.json does not have any scripts object or if the scripts object does not have a start key, it will run the command ‘node server.js’ instead.
+
+9. Apart from npm start, can you use other commands to start the application- if using yarn, we can use 'yarn run start'.
+
+Q1. How to prevent re-rendering in both functional and class component.
+Q2. What is the workflow of react and how it render component, like if hello world is rendered then how it is actually working
+Q3. How can you manage states in overall application.
+Q4. In which case, you will use functional component and in which case, you will use class component.
+Q5.react supports server-side rendering or client-side rendering .
+# With create react app, you need to prefix REACT_APP_ to the variable name
+
+
