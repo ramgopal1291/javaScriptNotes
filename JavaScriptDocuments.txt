@@ -93,6 +93,12 @@ var originalArray = ['100', '200', '300', {'a', 'hello'}]
 
 //Array Deep Copy
 
+Fast cloning with data loss - JSON.parse/stringify :-
+
+If you do not use Dates, functions, undefined, Infinity, RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep clone an object is:
+
+JSON.parse(JSON.stringify(object))
+
 1. JSON.parse(JSON.stringify(array1));
 
 
@@ -241,9 +247,41 @@ Ans: JavaScript variable arguments represents the arguments that are passed to a
 	func("1", "2", "3"); //==> "string", 3
 
 Q15. What is Closure? Give an example.
-Ans:- Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope.
-	It gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created. 
-	To use a closure, simply define a function inside another function and expose it.
+Ans:- In JavaScript, closures are defined as inner functions that have access to variables and parameters of outer function even after the outer function has returned.
+
+	In other words, a closure gives you access to an outer function’s scope from an inner function.
+
+	In JavaScript, closures are the primary mechanism used to enable data privacy. When you use closures for data privacy, the enclosed variables are only in scope within the containing (outer) function. You can’t get at the data from an outside scope except through the object’s privileged methods.
+
+	One common usage of closures is to provide information-hiding, which is helpful in bringing some kind of encapsulation to the language.
+
+	function foo(msg) {
+
+		function bar() {
+			// I can access foo's scope
+			// (i.e. bar can access everything that foo can access)
+			alert(msg);
+		}
+
+		return bar;
+
+	}
+
+	// Define the closure
+	function multFn() {
+		var mult = 9;
+		return function(val) {
+			mult = mult * val;
+			return mult;
+		}
+	}
+
+	// Use the closure
+	var mult = multFn();
+	console.log(mult(18));
+
+
+foo('hello')(); // alerts "hello"
 
 Q18. How does TypeOf Operator work?
 Ans:- The typeof operator is used to get the data type of its operand. 
@@ -272,8 +310,16 @@ Q12: What is the Temporal Dead Zone (TDZ) in JavaScript?
 
 Q27. What is the difference between Local storage & Session storage?
 Ans:- Local Storage – The data is not sent back to the server for every HTTP request (HTML, images, JavaScript, CSS, etc) – reducing the amount of traffic between client and server. It will stay until it is manually cleared through settings or program.
-	  Session Storage – It is similar to local storage; the only difference is while data stored in local storage has no expiration time, data stored in session storage gets cleared when the page session ends. Session Storage will leave when the browser is closed.
+		localStorage.setItem(key, value)	=> It is used to store the value in a particular location with the name of the key
+		localStorage.getItem(key, value)   	=> This method takes one parameter that is key which is used to get the value stored with a particular key name.
+		localStorage.removeItem(key)		=> This is method is used to remove the value stored in the memory in reference to key
+		localStorage.clear() 				=> This method is used to clear all the values stored in localstorage.
 
+	  Session Storage – It is similar to local storage; the only difference is while data stored in local storage has no expiration time, data stored in session storage gets cleared when the page session ends. Session Storage will leave when the browser is closed.
+		sessionStorage.setItem(key, value)
+		sessionStorage.getItem(key)
+		sessionStorage.removeItem(key)
+		sessionStorage.clear()
 
 
 https://www.edureka.co/blog/interview-questions/javascript-interview-questions/
@@ -466,3 +512,14 @@ Ans:- DOM stands for Document Object Model. DOM contains a bunch of nodes where 
 
 	Shadow DOM :
 	Shadow DOM serves for encapsulation. It allows a component to have its very own “shadow” DOM tree, that can’t be accidentally accessed from the main document, may have local style rules, and more.
+	
+Q8: How does the this keyword work? Provide some code examples
+Q9: What is the difference between slice and splice?
+Ans: 
+
+	Some of the major difference in a tabular form
+
+	Slice											Splice
+	Doesn't modify the original array(immutable)	Modifies the original array(mutable)
+	Returns the subset of original array			Returns the deleted elements as array
+	Used to pick the elements from array			Used to insert or delete elements to/from array

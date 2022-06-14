@@ -85,3 +85,17 @@ Ans: Actions are the only source of information for the store as per Redux offic
 Q11: What are React functional components?
 Ans:- A React functional component is a simple JavaScript/ES6 function that accepts props and returns a React element(JSX).After the introduction of React Hooks, writing functional components has become the ​standard way of writing React components in modern applications.
 
+Q6. Can web browsers read JSX directly? 
+Ans:- 1. Web browsers cannot read JSX directly. This is because they are built to only read regular JS objects and JSX is not a regular JavaScript object
+
+    2. For a web browser to read a JSX file, the file needs to be transformed into a regular JavaScript object. For this, we use Babel.
+
+Q7. What is the virtual DOM?
+Ans:- DOM stands for Document Object Model. The DOM represents an HTML document with a logical tree structure. Each branch of the tree ends in a node, and each node contains objects.
+
+    React keeps a lightweight representation of the real DOM in the memory, and that is known as the virtual DOM. When the state of an object changes, the virtual DOM changes only that object in the real DOM, rather than updating all the objects.
+
+Q8. What are React controlled components and uncontrolled components?
+
+
+Q9. How to loop inside JSX?
