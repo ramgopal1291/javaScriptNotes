@@ -73,4 +73,15 @@ Q4. In which case, you will use functional component and in which case, you will
 Q5.react supports server-side rendering or client-side rendering .
 # With create react app, you need to prefix REACT_APP_ to the variable name
 
+Q8: What is react hooks?
+Ans:- Hooks are the new feature introduced in the React 16.8 version. It allows you to use state and other React features without writing a class. Hooks are the functions which "hook into" React state and lifecycle features from function components. It does not work inside classes.
+
+Q9: What is redux in React?
+Ans:- React Redux is the official React UI bindings layer for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update state.
+
+Q10: What is action Redux?
+Ans: Actions are the only source of information for the store as per Redux official documentation. It carries a payload of information from your application to store. As discussed earlier, actions are plain JavaScript object that must have a type attribute to indicate the type of action performed.
+
+Q11: What are React functional components?
+Ans:- A React functional component is a simple JavaScript/ES6 function that accepts props and returns a React element(JSX).After the introduction of React Hooks, writing functional components has become the ​standard way of writing React components in modern applications.
 

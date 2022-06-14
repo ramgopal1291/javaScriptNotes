@@ -252,7 +252,10 @@ Ans:- The typeof operator is used to get the data type of its operand.
 	Its value is a string indicating the data type of the operand
 
 Q19. How to create a cookie using JavaScript?
-Ans:- The simplest way to create a cookie is to assign a string value to the document.cookie object.
+Ans:- Cookies are data, stored in small text files, on your computer.
+	The simplest way to create a cookie is to assign a string value to the document.cookie object.
+	You can also add an expiry date (in UTC time). By default, the cookie is deleted when the browser is closed:
+	document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
 
 Q21. How to delete a cookie using JavaScript?
 
@@ -441,3 +444,25 @@ Ans:- The “this” keyword refers to the object that the function is a propert
 
 Q5: What is the Temporal Dead Zone (TDZ) in JavaScript?
 Ans:- 
+
+Q6: What is Javascript Engine? How is it works?
+Ans:- A JavaScript engine is a software component that executes JavaScript code. The first JavaScript engines were mere interpreters, but all relevant modern engines use       just-in-time compilation for improved performance.[1]
+
+	JavaScript engines are typically developed by web browser vendors, and every major browser has one.
+
+	The first modern JavaScript engine was V8, created by Google for its Chrome browser. V8 debuted as part of Chrome in 2008, and its performance was much better than any prior engine.[2][3] The key innovation was just-in-time compilation, which can significantly improve execution times.
+
+	Apple's Safari browser is used JavaScriptCore is the built-in JavaScript engine for WebKit.
+	JavaScriptCore is often referred with different names, such as ​SquirrelFish and ​SquirrelFish Extreme. Within the context of Safari, Nitro and Nitro Extreme are also commonly used. However, the name of the project and the library is always JavaScriptCore.
+
+	Chakra is the engine of the Internet Explorer browser. It was also forked by Microsoft for the original Edge browser, but Edge was later rebuilt as a Chromium-based browser and thus now uses V8.
+
+Q7:	What is DOM creation? Explain Shadow DOM, Web components in JavaScript?
+Ans:- DOM stands for Document Object Model. DOM contains a bunch of nodes where each node represents an HTML element. The DOM views an HTML document as a tree of nodes. A node represents an HTML element. We can access these elements in the document and make changes to them using JavaScript.
+
+	The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+
+	There are a few different methods for selecting an element in the HTML document.
+
+	Shadow DOM :
+	Shadow DOM serves for encapsulation. It allows a component to have its very own “shadow” DOM tree, that can’t be accidentally accessed from the main document, may have local style rules, and more.

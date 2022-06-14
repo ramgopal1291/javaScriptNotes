@@ -188,5 +188,3 @@ Advanced js interview questions:
 	29. What is Object Destructuring?
 	30. What is a Temporal Dead Zone?
 
-
-
