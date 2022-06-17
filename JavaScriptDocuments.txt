@@ -52,6 +52,31 @@ Callback :- A callback is a function passed into another function as an argument
 
 -------------------------------------------------------
 
+Question:- how to combine arrays in javascript?
+Ans: 1. By Spread operator: => console.log([...arr1, ...arr2, ...arr3])
+	 2. By concate function: =>
+	 
+	 	const arr1 = ["Cecilie", "Lone"];
+		const arr2 = ["Emil", "Tobias", "Linus"];
+		const arr3 = ["Robin"];
+
+		const children = arr1.concat(arr2, arr3);
+		console.log(children)
+
+	3. By push method: =>
+
+		const arr1 = ["Cecilie", "Lone"];
+		const arr2 = ["Emil", "Tobias", "Linus"];
+		const arr3 = ["Robin"];
+		arr1.push(...arr2);
+		console.log(arr1)
+
+-------------------------------------------------------
+
+Questions:- Explain Event bubbling and Event Capturing in JavaScript?
+Ans:- 
+
+-------------------------------------------------------
 Shallow copy Vs Deep copy
 
 Shallow copy :  Coping on top level elements

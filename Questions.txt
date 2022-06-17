@@ -1,0 +1,407 @@
+
+
+====================== JavaScript Questions =======================
+
+------------------------------------------------------------------------
+
+Q3. What are the data types supported by JavaScript?
+Ans: The data types supported by JavaScript are:
+
+	Primitive types
+
+			Undefined: When a variable is declared but not assigned, it has the value of undefined and it’s type is also undefined.
+
+					Example :
+					var x; // value of x is undefined
+					var y = undefined; // we can also set the value of a variable as undefined
+
+			Null: It represents a non-existent or a invalid value.
+
+					Example :
+					var z = null;
+
+			Boolean: It represents a logical entity and can have only two values : true or false. 
+					Booleans are generally used for conditional testing.
+
+					Example :
+						var a = 2;
+						var b =  3;
+						var c =  2;
+						(a == b) // returns false
+						(a == c) //returns true
+
+			String: It represents a series of characters and is written with quotes. 
+					A string can be represented using a single or a double quote.
+
+					Example :
+						var str = "Vivek Singh Bisht"; //using double quotes
+						var str2 = 'John Doe'; //using single quotes
+
+			Symbol: It is a new data type introduced in the ES6 version of javascript. 
+					It is used to store an anonymous and unique value.
+
+					Example :
+						var symbol1 = Symbol('symbol');
+
+			Number: It represents a number and can be written with or without decimals.
+
+					Example :
+						var x = 3; //without decimal
+						var y = 3.6; //with decimal
+			
+			BigInt - This data type is used to store numbers which are above the limitation of the Number data type. 
+					It can store large integers and is represented by adding “n” to an integer literal.
+
+					Example :
+						var bigInteger =  234567890123456789012345678901234567890;
+
+	Non-primitive types: 
+						Primitive data types can store only a single value. 
+						To store multiple and complex values, non-primitive data types are used.
+
+			Object - Used to store collection of data.
+
+				Example:
+					// Collection of data in key-value pairs
+
+					var obj1 = {
+						x:  43,
+						y:  "Hello world!",
+						z: function(){
+							return this.x;
+						}
+					}
+						
+					// Collection of data as an ordered list
+						
+					var array1 = [5, "Hello", true, 4.1]; 
+
+
+--------------------------------------------------------------
+
+ES6:
+
+	1. LET & CONST: Till ES5, JS has only function scope and global scope with the introduction of let keyword in ES6, JS can now have block scope.
+	
+	2. FOR..OF:  for...of is an alternative for both for...in and forEach() and loops iterable data structures like Arrays, Maps, Sets, and strings.
+	
+	3. DEFAULT PARAMETERS: Provides default values to function parameters if no value or undefined is passed.
+	
+	4. REST OPERATOR: Rest Operator is used to handle function parameters. It uses three dots as its syntax (i.e …).
+	
+	5. SPREAD OPERATOR: Spread Operator is used with arrays and its syntax is exactly the same as that of Rest Operator (ie …). It is used to split the contents of an array.
+	
+	6. DESTRUCTURING: Destructuring helps in unpacking values from an array or an object.
+	
+	7. TEMPLATE LITERALS/STRINGS: It allows embedded expressions, which makes print statements easy.
+	
+	8. ARROW FUNCTIONS: Arrow Functions use => as its token and so are also called as Fat Arrow Functions. They are one line functions and are much like Lambda functions in programming languages like Java 8 and Python. Prior to =>, JS has a function keyword.
+	
+	9. PROMISES:
+				Promises are introduced in ES6 to handle Asynchronous Programming in a more elegant way. Before Promises, async calls were handled by Callbacks. Promises resolved the Call Back Hell.
+	10. CLASSES:
+				The Objects in Javascript are based on Prototypes and follows Prototypal Inheritance. But in ES6 the keyword class is introduced that makes the approach very easy.
+				
+	11. Other features in ES6 include:
+				Set, WeakSet, Map, WeakMap
+				Generators
+				Symbols
+				Unicode
+				Modules
+				Proxies
+				Built-Ins
+				Binary and Octal
+				Reflect
+				Tail Call Optimization
+	
+	12. Difference between function and Arrow function
+
+-------------------------------------------------------------------
+
+Question:- how to combine arrays in javascript?
+Ans: 1. By Spread operator: => console.log([...arr1, ...arr2, ...arr3])
+
+	 2. By concate function: =>
+	 
+	 	const arr1 = ["Cecilie", "Lone"];
+		const arr2 = ["Emil", "Tobias", "Linus"];
+		const arr3 = ["Robin"];
+
+		const children = arr1.concat(arr2, arr3);
+		console.log(children)
+
+	3. By push method: =>
+
+		const arr1 = ["Cecilie", "Lone"];
+		const arr2 = ["Emil", "Tobias", "Linus"];
+		const arr3 = ["Robin"];
+		arr1.push(...arr2);
+		console.log(arr1)	
+
+-------------------------------------------------------------------
+
+Shallow copy Vs Deep copy
+
+Shallow copy :  Coping on top level elements
+Deep Copy :  Copying nested elements
+
+var array = ['ram', 'shyam', 'krishna'];
+var arrayNew = array;
+	arrayNew[0] = '100';
+
+console.log(arrayNew, array);
+
+
+var car = {
+	size = '100%',
+	owner = 'ram',
+	isACorNonAC = true
+}
+
+var otherCar = car;
+
+otherCar.model = '0%';
+car.isACorNonAC = false;
+
+console.log(otherCar, car);
+
+//Array Deep Copy
+
+Fast cloning with data loss - JSON.parse/stringify :-
+
+If you do not use Dates, functions, undefined, Infinity, RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep clone an object is:
+
+JSON.parse(JSON.stringify(object))
+
+1. JSON.parse(JSON.stringify(array1));
+
+------------------------------------------------------------------------
+
+Question :- Remove duplicate values from JS array
+
+	1. uniq = [...new Set(array)];
+	2. var names = ["Mike","Matt","Nancy","Adam","Jenny","Matt","Nancy","Carl"];
+
+		let uniqueChars = names.filter((c, index) => {
+			return names.indexOf(c) === index;
+		});
+
+		console.log(uniqueChars)
+
+
+
+----------------------------------------------------------------
+
+Q15. What is Closure? Give an example.
+Ans:- In JavaScript, closures are defined as inner functions that have access to variables and parameters of outer function even after the outer function has returned.
+
+	In other words, a closure gives you access to an outer function’s scope from an inner function.
+
+	In JavaScript, closures are the primary mechanism used to enable data privacy. When you use closures for data privacy, the enclosed variables are only in scope within the containing (outer) function. You can’t get at the data from an outside scope except through the object’s privileged methods.
+
+	One common usage of closures is to provide information-hiding, which is helpful in bringing some kind of encapsulation to the language.
+
+	function foo(msg) {
+
+		function bar() {
+			// I can access foo's scope
+			// (i.e. bar can access everything that foo can access)
+			alert(msg);
+		}
+
+		return bar;
+
+	}
+
+----------------------------------------------------------------
+
+Q2. Explain Hoisting in javascript.
+Ans:- Hoisting is a default behaviour of javascript where all the variable and function declarations are moved on top.
+
+
+		This means that irrespective of where the variables and functions are declared, they are moved on top of the scope. The scope can be both local and global.
+
+		Example 1:
+
+			hoistedVariable = 3;
+			console.log(hoistedVariable); // outputs 3 even when the variable is declared after it is initialized	
+			var hoistedVariable;
+
+		Example 2:
+
+			hoistedFunction();  // Outputs " Hello world! " even when the function is declared after calling
+
+				function hoistedFunction(){ 
+				console.log(" Hello world! ");
+			}
+
+----------------------------------------------------------------
+
+Q9: What is the difference between slice and splice?
+Ans: 
+
+	Some of the major difference in a tabular form
+
+	Slice											Splice
+	Doesn't modify the original array(immutable)	Modifies the original array(mutable)
+	Returns the subset of original array			Returns the deleted elements as array
+	Used to pick the elements from array			Used to insert or delete elements to/from array
+
+
+----------------------------------------------------------------
+
+console.log("1"+2+4+5)
+console.log("5" - 4)
+
+console.log(null==undefined)
+
+console.log(5>4>3)
+
+
+================================== React js  =====================================
+
+
+React
+functional, class component, props, state, presentational/dumb
+props -> child, prop drilling - context api, state management - redux, mobx, HOCs, Pure Componet
+
+redux functionality-, middleware - thunk, saga
+hooks - useState, redux - useDispatch(),
+
+useMemo();
+debounce, throttle
+Reconcilation,
+React diffing algorithm - React Fibre
+
+useState(),
+this.setState(() => {
+})
+
+
+Redux - components, reselect, redux-persist
+html - 5 -features
+Css- Box model, flex model, grid model,
+postion: auto| relative| absolute| fixed| static - difference- flow of document
+
+------------------------------
+
+Please find below set of questions with sample answers that were being asked by client today. Please go through these and look for more details as well. Mostly questions are present in the link that I had shared - https://github.com/sudheerj/reactjs-interview-questions
+So I am again repeating, please go through all the questions present in this link.
+
+
+1. How to prevent re-rendering in both functional and class component
+Functional Component - use React.memo.
+Class Component - use React.PureComponent. For regular Class components, you can make use of shouldComponentUpdate() lifecycle hook
+
+2. How to deploy react application in another machine.
+For deployment, we have to create a react build. If using CRA, we can directly run 'npm run build' else we have to configure webpack manually for creating the build. The generated build can be deployed to any web server
+
+3. What is the workflow of react and how it render component, like if hello world is rendered then how it is actually working -
+Please go through this - https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/
+
+4. How can you manage states in overall application -  A state management library like Redux can be used. Alternative like Mobx can also be used but you can tell them that you have only worked with redux if you have not used mobx and can work on that if required.
+
+5. Apart from redux , is there any alternative - Mobx, Context API with react hooks, Relay+graphql
+
+6. In which case, you will use functional component and in which case, you will use class component-
+Earlier when React hooks were not present, Functional components were used for stateless components. Class components were used where the component had to maintain their own local state. But with the React hooks, local state can also be maintained inside functional components as well.
+
+7. Diff between functional and class component - See point #6. other small things are: class components have a render() member whereas FCs directly return the JSX. No lifecycle methods in FCs but things can be achieved using useEffect() hook.
+
+8. What is npm start command and how it work? 
+When you issue the command npm start from the root directory of your project, node will look for a ‘scripts’ object in your package.json file. If found, it will look for a script with the key ‘start’ and run the command specified as its value.
+If your package.json does not have any scripts object or if the scripts object does not have a start key, it will run the command ‘node server.js’ instead.
+
+9. Apart from npm start, can you use other commands to start the application- if using yarn, we can use 'yarn run start'.
+
+Q1. How to prevent re-rendering in both functional and class component.
+Q2. What is the workflow of react and how it render component, like if hello world is rendered then how it is actually working
+Q3. How can you manage states in overall application.
+Q4. In which case, you will use functional component and in which case, you will use class component.
+Q5.react supports server-side rendering or client-side rendering .
+# With create react app, you need to prefix REACT_APP_ to the variable name
+
+Q6. Can web browsers read JSX directly? 
+Ans:- 1. Web browsers cannot read JSX directly. This is because they are built to only read regular JS objects and JSX is not a regular JavaScript object
+
+    2. For a web browser to read a JSX file, the file needs to be transformed into a regular JavaScript object. For this, we use Babel.
+
+Q7. What is the virtual DOM?
+Ans:- DOM stands for Document Object Model. The DOM represents an HTML document with a logical tree structure. Each branch of the tree ends in a node, and each node contains objects.
+
+    React keeps a lightweight representation of the real DOM in the memory, and that is known as the virtual DOM. When the state of an object changes, the virtual DOM changes only that object in the real DOM, rather than updating all the objects.
+
+Q8. What are React controlled components and uncontrolled components?
+
+Q8: What is react hooks?
+Ans:- Hooks are the new feature introduced in the React 16.8 version. It allows you to use state and other React features without writing a class. Hooks are the functions which "hook into" React state and lifecycle features from function components. It does not work inside classes.
+
+Q9: What is redux in React?
+Ans:- React Redux is the official React UI bindings layer for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update state.
+
+Q10: What is action Redux?
+Ans: Actions are the only source of information for the store as per Redux official documentation. It carries a payload of information from your application to store. As discussed earlier, actions are plain JavaScript object that must have a type attribute to indicate the type of action performed.
+
+Q11: What are React functional components?
+Ans:- A React functional component is a simple JavaScript/ES6 function that accepts props and returns a React element(JSX).After the introduction of React Hooks, writing functional components has become the ​standard way of writing React components in modern applications.
+
+Q6. Can web browsers read JSX directly? 
+Ans:- 1. Web browsers cannot read JSX directly. This is because they are built to only read regular JS objects and JSX is not a regular JavaScript object
+
+    2. For a web browser to read a JSX file, the file needs to be transformed into a regular JavaScript object. For this, we use Babel.
+
+Q7. What is the virtual DOM?
+Ans:- DOM stands for Document Object Model. The DOM represents an HTML document with a logical tree structure. Each branch of the tree ends in a node, and each node contains objects.
+
+    React keeps a lightweight representation of the real DOM in the memory, and that is known as the virtual DOM. When the state of an object changes, the virtual DOM changes only that object in the real DOM, rather than updating all the objects.
+
+Q8. What are React controlled components and uncontrolled components?
+
+Q3: What are Higher-Order Components (HOC) in React?
+Junior 
+Top 130 React Interview Questions  React  130  
+Answer
+A higher-order component (HOC) is a function that takes a component and returns a new component. Basically, it’s a pattern that is derived from React’s compositional nature We call them as “pure’ components” because they can accept any dynamically provided child component but they won’t modify or copy any behavior from their input components.
+
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
+HOC can be used for many use cases as below,
+
+Code reuse, logic and bootstrap abstraction
+Render High jacking
+State abstraction and manipulation
+Props manipulation
+
+What's the difference between a Controlled component and an Uncontrolled one in React?
+Junior 
+Top 130 React Interview Questions  React  130  
+Answer
+This relates to stateful DOM components (form elements) and the React docs explain the difference:
+
+A Controlled Component is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a "dumb component".
+A Uncontrolled Component is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+Most native React form components support both controlled and uncontrolled usage:
+
+// Controlled:
+<input type="text" value={value} onChange={handleChange} />
+
+// Uncontrolled:
+<input type="text" defaultValue="foo" ref={inputRef} />
+// Use `inputRef.current.value` to read the current value of <input>
+
+Q9. How to loop inside JSX?
+
+Q9. How to loop inside JSX?
+Q9. What is useMemo() hooks?
+Q9. What is useCallback() hooks?
+Q9. What is React.Memo() hooks?
+
+Q16: What are the lifecycle methods of ReactJS class components?
+Answer:-
+componentWillMount:- Executed before rendering and is used for App level configuration in your root component.
+componentDidMount:- Executed after first rendering and here all AJAX requests, DOM or state updates, and set up eventListeners should occur.
+componentWillReceiveProps:- Executed when particular prop updates to trigger state transitions.
+shouldComponentUpdate:- Determines if the component will be updated or not. By default it returns true. If you are sure that the component doesn't need to render after state or props are updated, you can return false value. It is a great place to improve performance as it allows you to prevent a rerender if component receives new prop.
+
+componentWillUpdate:- Executed before re-rendering the component when there are pros & state changes confirmed by shouldComponentUpdate which returns true.
+componentDidUpdate:- Mostly it is used to update the DOM in response to prop or state changes.
+componentWillUnmount:- It will be used to cancel any outgoing network requests, or remove all event listeners associated with the component.

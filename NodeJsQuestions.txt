@@ -1,0 +1,57 @@
+Q1: Explain the difference between local and global npm packages installation?
+Answer:
+    The main difference between local and global packages is this:
+
+    local packages are installed in the directory where you run npm install <package-name>, and they are put in the node_modules folder under this directory
+    global packages are all put in a single place in your system (exactly where depends on your setup), regardless of where you run npm install -g <package-name>
+    In general, all packages should be installed locally.
+
+    This makes sure you can have dozens of applications in your computer, all running a different version of each package if needed.
+    Updating a global package would make all your projects use the new release, and as you can imagine this might cause nightmares in terms of maintenance, as some packages might break compatibility with further dependencies, and so on.
+
+Q2: What's the Event Loop?
+Answer:
+    The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
+
+
+
+    Every I/O requires a callback - once they are done they are pushed onto the event loop for execution. Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the poll queue to eventually be executed.
+
+Q1. What is a buffer class in Node.js?
+    A buffer class holds raw data just like an array of integers but corresponds to a raw memory allocation outside the V8 heap. These aren't resizable and have several methods specifically for binary data. Pure JavaScript is not compatible with binary data, so a buffer class comes into play. 
+
+Q2. What is piping in Node.js?
+
+    This is one of the most common Node.js interview questions to gauge your knowledge of vital topics in Node.js. Piping in Node.js is the mechanism that connects the output of one stream to another, i.e., it connects multiple streams. It retrieves data from one stream and passes the output to another stream.
+
+Q3. What do you understand about node.js streams?
+    Node.js streams are instances of EventEmitter. You can use them to work with streaming data in Node.js, especially for handling and manipulating streaming large files (such as videos and mp3) over the network. Streams use buffers for temporary storage. There are four main types of streams. 
+
+    Writable streams to write data (e.g. fs.createWriteStream())
+    Readable streams to read data (e.g. fs.createReadStream())
+    Duplex streams that are readable and writable (e.g. net.Socket)
+    Transform streams or duplex streams can modify or transform the data as it is written and read (e.g., zlib.createDeflate())
+
+Q5. What is middleware?
+    A middleware function has access to the response object, request object, and the next middleware function in the application's request-response cycle. A variable named next denotes the next middleware function. Middleware finds usage in between your request and business logic. You can also write your own middleware for a specific use case. The primary tasks that the middleware functions perform are:
+
+    Code execution
+    Modify the request and the response objects
+    Complete the request-response cycle
+    It can invoke the next middleware function in the stack.
+
+
+What is Package.json?
+What is an Event Emitter in Node.js?
+How is the process.nextTick() different from setImmediate()?
+What is the significance of module.exports?
+What is NODE_ENV?
+Differentiate between fork() and spawn() methods in Node.js.
+What is a test pyramid?
+What challenges have you faced working with Node.js, and how did you overcome them?
+How would you deal with Node.js maintenance problems?
+What are RESTful Web Services in Node.js?
+How would you use JSON Web Token (JWT) for authentication in Node.js?
+What is the difference between Angular and Node.js?
+How is Node.js different from JS?
+How are worker threads different from clusters?

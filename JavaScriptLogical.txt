@@ -1,0 +1,251 @@
+
+
+var name="Ram";
+function Test(){
+    console.log("Hello "+name);
+    var name="Ramesh";
+    console.log("Hi "+name);
+}
+Test();
+
+=======================================================
+
+for(var i=0; i<10; i++)
+{
+
+	setTimeout(()=>{
+		console.log(i)
+	},100)
+
+}
+
+========================================================
+
+(function(){
+  var a = b = 3;
+})();
+
+console.log("a defined? " + typeof a );
+console.log("b defined? " + typeof b );
+
+=======================================================
+
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
+    }
+};
+myObject.func();
+
+==============================================
+
+var a={},
+    b={key:'b'},
+    c={key:'c'};
+
+a[b]=123;
+a[c]=456;
+
+=============================================
+
+(function(x) {
+    return (function(y) {
+        console.log(x);
+    })(2)
+})(1);
+
+=============================================
+
+
+var a = [1, 2, 3];
+a[10] = 99;
+console.log(a[6]);
+
+var a = ["1", "2", "3"];
+//a["10"] = 99;
+console.log(a[6]);
+
+================================
+
+console.log(typeof typeof 1);
+
+===============================================
+
+	2+4+5+"1"
+    
+	+"1"+6
+	-'34'+10
+
+    "12" - 10 
+
+	var y = 1, x = y = typeof x
+
+	var y= 1
+	var x; // undefined 
+		x=y
+	var y = typeof(x)  // undefined
+	
+	
+	=> What is x => 1
+
+let a = (2, 3, 5)
+
+
+
+var a = [1,2,3,4]
+b=a
+b=b.push(5)
+
+c={...a,6} => [1,2,3,4,5,6]
+
+console.log(c);
+
+
+console.log(null==undefined)
+console.log(null ===undefined)
+
+======================================================
+
+var obj1 = {
+			address : "Mumbai,India",
+			getAddress: function(){
+				console.log(this.address); 
+                return this.address;
+			}
+		}
+			
+var getAddress = obj1.getAddress();
+console.log(getAddress)
+var obj2 = {name:"akshay",getAddress1:getAddress };
+console.log(obj2.getAddress1);
+
+
+===================================================
+
+15 && 54
+
+54 & 4
+
+"5" - 4
+
++"5" + 8
+
+=============================================
+
+
+for (var i = 0; i < 5; i++) {
+  (function(i) {
+    setTimeout(function () {
+      console.log(i);
+    }, i);
+  })(i);
+}
+
+============================================
+
+true || false && false   
+true && (false || false)  
+(2 == 3) || (4 < 0) && (1 == 1)
+
+if (-42){console.log('Ram Gopal')}
+
+if ("false"){console.log('Ram Gopal')}
+if ("0"){console.log('Ram Gopal')}
+
+============================================
+
+true && "dog"
+// returns "dog"
+
+[] && "dog"
+// returns "dog"
+
+===========================================
+
+if (true)
+if ({})
+if ([])
+if (42)
+if ("0")
+if ("false")
+if (new Date())
+if (-42)
+if (12n)
+if (3.14)
+if (-3.14)
+if (Infinity)
+if (-Infinity)
+
+==========================================
+
+false, 0, -0, 0n, "", null, undefined, and NaN
+
+==========================================
+
+a1 = true  && true       // t && t returns true
+a2 = true  && false      // t && f returns false
+a3 = false && true       // f && t returns false
+a4 = false && (3 == 4)   // f && f returns false
+a5 = 'Cat' && 'Dog'      // t && t returns "Dog"
+a6 = false && 'Cat'      // f && t returns false
+a7 = 'Cat' && false      // t && f returns false
+a8 = ''    && false      // f && f returns ""
+a9 = false && ''         // f && f returns false
+
+==============================================
+
+a || (b * c);  // evaluate `a` first, then produce `a` if `a` is "truthy"
+a && (b < c);  // evaluate `a` first, then produce `a` if `a` is "falsy"
+a ?? (b || c); // evaluate `a` first, then produce `a` if `a` is not `null` and not `undefined`
+a?.b.c;        // evaluate `a` first, then produce `undefined` if `a` is `null` or `undefined`
+
+
+==============================================
+
+const cars = {
+    a: "Saab",
+    b: "Volvo",
+    c: {
+        name: "BMD"
+    }
+};
+
+let {c:{name}} = cars
+
+console.log(name)
+
+
+const arr = [1,2,3,4,5,[1,2,3,4,5,6,[1,2,3,4,5,6],1,2,3,4,5],1,2,3,4]
+
+const [a,b,c,d,e,f:[z,y,x,w,v,u,t]] = arr;
+console.log(t)
+
+=================================================
+
+const arr = [1,2,3,4,5,[1,2,3,4,5,6,7,[1,2,3,4,5,6],1,2,3,4,5],1,2,3,4]
+const [,,,,,[...rest]] = arr
+let a = rest.flat()
+const res = a.slice(0,7)
+console.log(res)
+
+
+
+
+let a = {
+    name:"ajay",
+    city: {
+        name:"Agra"
+    }
+}
+
+let b = {...a, [city]:{...a.city}}
+b.city.name = "Noida";
+console.log(a)
+console.log(b)
