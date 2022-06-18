@@ -683,7 +683,7 @@ Ans:-
 
 		The static method Object.defineProperty() defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
 
-		we can add/remove new property but can not change in existing.
+		we can add/remove new property but can not change/delete in existing.
 
 	Object.seal()
 		The Object.seal() method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.
