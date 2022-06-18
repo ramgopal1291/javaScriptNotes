@@ -216,3 +216,86 @@ Ans:- All the applications have multiple top-level directories as mentioned belo
     Actions: It is used for all the action creators, where the file name should be corresponding to the part of the app.
     Reducers: It is used for all the reducers where the file name is corresponding to the state key.
     Store: it is used for store initialization. This directory works best in small and mid-level size apps.
+
+Q11: How many Ways to use useEffect() in ReactJS?
+Ans:- It’s a hook that lets do side effects inside function components. It takes a function as a first argument, and an array of dependencies as the second:
+
+    React.useEffect(fn, [deps])
+
+    When and How to Use It:
+
+    It slightly differs from the class component lifecycle methods. The main difference is that lifecycle methods always have the reference to the latest state, while useEffect() will cash the state, handlers and effects of each render, and it will be different from the next one.
+    But the good thing is that you can manipulate when to call the function inside useEffect() by specifying a dependency list or none.
+
+    I think of 4 possible ways to call the method:
+
+    1. once, when component mounts
+    2. on every component render
+    3. on every component render with a condition
+    4. when component unmounts
+
+    1. When Component Mounts:-
+
+    Usually, you would like to use it for fetching data or adding event listeners.
+    To run the function once, add an empty dependency list. If there are no dependencies in it, that means it will stay the same all the time, and will not call the function again.
+
+    function MyComponent() {
+        // ...
+        React.useEffect(() => {
+            callMeOnlyOnce()
+        }, [])
+        // ...
+    }
+
+    2. On Every Component Render:-
+
+    This happens for every render, including the first one.
+
+    Without the second parameter, the useEffect hook will be called on every render of the component which can be dangerous.
+
+    To call the function on each component render, skip adding the dependency list. No list, nothing to compare against, that means run the effect every time.
+    function MyComponent() {
+        // ...
+        React.useEffect(() => {
+            runThisFunctionOnEveryRender();
+        })
+        // ...
+    }
+
+    3. On Every Component Render with a Condition:-
+
+    To call a function conditionally, specify the list of dependencies.
+    And the rule of thumb is to always add those dependencies that you are using inside the useEffect().
+    function MyComponent() {
+        // ...
+        React.useEffect(() => {
+            runIfOneOfTheDepsWillChange(dep1, dep2);
+        }, [dep1, dep2])
+        // ...
+    }
+
+    4. When Component Unmounts:-
+
+    To clean up (remove event listeners or stop data fetching with a side effect) after the component unmounts, a return statement with a function should be added inside the useEffect() hook.
+    function MyComponent() {
+        // ...
+        React.useEffect(() => {
+            document.addEventListener();
+
+            return () => {
+                document.removeEventListener();
+            }
+        }, [])
+        // ...
+    }
+
+    These can also be combined into one useEffect:
+
+    useEffect(() => {
+        doSomethingOnMount();
+        return () => {
+            doSomethingOnUnmount();
+        }
+    }, [])
+    This process is called effect clean up, you can read more from the documentation.
+
