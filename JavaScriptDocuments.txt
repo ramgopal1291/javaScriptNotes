@@ -548,3 +548,33 @@ Ans:
 	Doesn't modify the original array(immutable)	Modifies the original array(mutable)
 	Returns the subset of original array			Returns the deleted elements as array
 	Used to pick the elements from array			Used to insert or delete elements to/from array
+
+
+Q38: What do you understand by event bubbling?
+Ans: Event flow specifies the order in which events are received on the page from the element where the event occurs and propagated through the DOM tree. There are two main event models: event bubbling and event capturing.
+
+	In the event bubbling model (bottom to top), an event starts at the most particular element and then flows upward toward the least specific element i.e., the document or even the window. For example, you have a div element and a button inside the div element when the button triggers a click event, the click event occurs in the following order:
+
+	button
+
+	div with the id container
+
+	body
+
+	html
+
+	Document
+
+	The click event first occurs on the button, which is the element that was clicked. Then the click event goes up the DOM tree, firing on each node along its way until it reaches the document object. Few web browsers these days will bubble the event up to the window object.
+
+	https://javascript.info/bubbling-and-capturing
+
+	Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event. The event propagation mode determines in which order the elements receive the event.
+
+	With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+	With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+	Capturing is also called "trickling", which helps remember the propagation order:
+
+	e.stopPropagation();  //syntax to stop event bubbling
