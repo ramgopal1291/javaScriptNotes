@@ -216,3 +216,13 @@ Ans:- All the applications have multiple top-level directories as mentioned belo
     Actions: It is used for all the action creators, where the file name should be corresponding to the part of the app.
     Reducers: It is used for all the reducers where the file name is corresponding to the state key.
     Store: it is used for store initialization. This directory works best in small and mid-level size apps.
+
+Q11:- What is webpack?
+Ans:- Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser.
+
+Q12:- Why we are using set setstate for updating the in react.
+Ans:- The idea behind that is that in order to track changes in state and than re-render the component according to the changes, you have to use setState, because after setState, the render function is triggered.
+
+Q13:- What is Babel?
+Ans:- Babel is a JavaScript transpiler that converts edge JavaScript into plain old ES5 JavaScript that can run in any browser (even the old ones). Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+
